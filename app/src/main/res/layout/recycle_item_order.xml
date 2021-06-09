@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+<!--        <variable-->
+<!--            name="order"-->
+<!--            type="com.viper.databasework.bean.ItemOrder" />-->
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/recycle_order_id_h"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="订单号："-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/recycle_order_id"-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/recycle_order_id"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@{String.valueOf(order.id), default=798456123}"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintStart_toEndOf="@id/recycle_order_id_h"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/recycle_order_time"-->
+<!--                bindTime="@{order.time}"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/recycle_order_id"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                tools:text="2021_6_8" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/recycle_order_amount_h"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="共计：￥"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/recycle_order_amount"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/recycle_order_amount" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/recycle_order_amount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:text="@{String.valueOf(order.amount), default=789}"-->
+<!--                android:textColor="#FF3D00"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/recycle_order_time" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/recycle_order_rv"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:overScrollMode="never"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/recycle_order_amount"-->
+<!--                tools:itemCount="3"-->
+<!--                tools:listitem="@layout/recycle_item_product" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </com.google.android.material.card.MaterialCardView>
+</layout>

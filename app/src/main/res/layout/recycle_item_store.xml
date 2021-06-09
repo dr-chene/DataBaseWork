@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="store"
+            type="com.viper.databasework.bean.ItemStore" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/recycle_store_img"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_store"
+                app:layout_constraintBottom_toBottomOf="@id/recycle_store_address_h"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recycle_store_name" />
+
+            <TextView
+                android:id="@+id/recycle_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@{store.name, default=商店名}"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/recycle_store_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/recycle_store_address_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="地址:"
+                app:layout_constraintStart_toStartOf="@id/recycle_store_name"
+                app:layout_constraintTop_toBottomOf="@id/recycle_store_name" />
+
+            <TextView
+                android:id="@+id/recycle_store_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="@{store.address, default=地址}"
+                app:layout_constraintStart_toEndOf="@id/recycle_store_address_h"
+                app:layout_constraintTop_toTopOf="@id/recycle_store_address_h" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

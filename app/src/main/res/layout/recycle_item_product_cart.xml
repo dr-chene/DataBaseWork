@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="product"
+            type="com.viper.databasework.bean.BuyProduct" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/recycle_product_cart_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{product.pay ? View.GONE : View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="@id/recycle_product_cart_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recycle_product_cart_img" />
+
+            <ImageView
+                android:id="@+id/recycle_product_cart_img"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_product"
+                app:layout_constraintBottom_toBottomOf="@id/recycle_product_cart_type_h"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toEndOf="@id/recycle_product_cart_select"
+                app:layout_constraintTop_toTopOf="@id/recycle_product_cart_name" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@{product.name, default=商品名}"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/recycle_product_cart_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_brand_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="品牌:"
+                app:layout_constraintStart_toStartOf="@id/recycle_product_cart_name"
+                app:layout_constraintTop_toBottomOf="@id/recycle_product_cart_name" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="@{product.brand, default=品牌名}"
+                app:layout_constraintStart_toEndOf="@id/recycle_product_cart_brand_h"
+                app:layout_constraintTop_toTopOf="@id/recycle_product_cart_brand_h" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_type_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="分类:"
+                app:layout_constraintStart_toStartOf="@id/recycle_product_cart_brand_h"
+                app:layout_constraintTop_toBottomOf="@id/recycle_product_cart_brand_h" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{product.type, default=分类名}"
+                app:layout_constraintStart_toEndOf="@id/recycle_product_cart_type_h"
+                app:layout_constraintTop_toTopOf="@id/recycle_product_cart_type_h" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_price_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:text="售价："
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/recycle_product_cart_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(product.price), default=789}"
+                android:textColor="?colorPrimary"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/recycle_product_cart_price_h"
+                app:layout_constraintStart_toEndOf="@id/recycle_product_cart_price_h" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

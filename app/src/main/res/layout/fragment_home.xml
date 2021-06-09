@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/home_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/home_search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="搜索商品" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_search" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/home_tv_hot_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="热门商店："
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/home_chips_hot_shop" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/home_chips_hot_shop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/home_tv_hot_shop"
+                    app:layout_constraintTop_toBottomOf="@id/home_search_bar">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_store_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商店1" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_store_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商店2" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_store_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商店3" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/home_tv_hot_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="畅销商品："
+                    app:layout_constraintStart_toStartOf="@id/home_tv_hot_shop"
+                    app:layout_constraintTop_toTopOf="@id/home_chips_hot_product" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/home_chips_hot_product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/home_chips_hot_shop"
+                    app:layout_constraintStart_toEndOf="@id/home_tv_hot_product"
+                    app:layout_constraintTop_toBottomOf="@id/home_chips_hot_shop"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_product_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商品1" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_product_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商品2" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_product_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商品3" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_product_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商品4" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/home_hot_product_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="商品5" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/home_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/home_chips_hot_product"
+                    app:tabMode="scrollable">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商品" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="商店" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="ifContentScrolls"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_tabs"
+                    tools:itemCount="7"
+                    tools:listitem="@layout/recycle_item_product" />
+
+                <include
+                    android:id="@+id/home_empty"
+                    layout="@layout/empty_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_rv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

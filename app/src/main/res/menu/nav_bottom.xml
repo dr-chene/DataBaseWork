@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_bottom_home"
+        android:title="首页"
+        android:icon="@drawable/ic_home"/>
+
+<!--    <item-->
+<!--        android:id="@+id/nav_bottom_shop"-->
+<!--        android:title="店家"-->
+<!--        android:icon="@drawable/ic_shop"/>-->
+
+    <item
+        android:id="@+id/nav_bottom_mine"
+        android:title="我的"
+        android:icon="@drawable/ic_mine"/>
+
+<!--    <item-->
+<!--        android:id="@+id/nav_bottom_test"-->
+<!--        android:title="测试"-->
+<!--        android:icon="@drawable/ic_test"/>-->
+</menu>

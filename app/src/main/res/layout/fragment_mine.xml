@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MineFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/mine_srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/AvatarStyle" />
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="UserName"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_id_head"
+                        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+                    <TextView
+                        android:id="@+id/tv_id_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="id:"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_id"
+                        app:layout_constraintStart_toStartOf="@id/tv_id"
+                        app:layout_constraintTop_toBottomOf="@id/tv_nickname" />
+
+                    <TextView
+                        android:id="@+id/tv_rank_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="rank:"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_rank"
+                        app:layout_constraintTop_toTopOf="@id/tv_id_head" />
+
+                    <TextView
+                        android:id="@+id/tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45627"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_email_head"
+                        app:layout_constraintStart_toStartOf="@id/tv_nickname"
+                        app:layout_constraintTop_toBottomOf="@id/tv_id_head" />
+
+                    <TextView
+                        android:id="@+id/tv_rank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="2891478"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/tv_id"
+                        app:layout_constraintTop_toTopOf="@id/tv_id" />
+
+                    <TextView
+                        android:id="@+id/tv_email_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="邮箱："
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                        app:layout_constraintStart_toStartOf="@id/tv_nickname"
+                        app:layout_constraintTop_toBottomOf="@id/tv_id" />
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="zanwu"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_email_head"
+                        app:layout_constraintStart_toEndOf="@id/tv_email_head"
+                        app:layout_constraintTop_toTopOf="@id/tv_email_head" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/mine_tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+                        app:tabMode="scrollable">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="购物车" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="购买记录" />
+                    </com.google.android.material.tabs.TabLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mine_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/mine_tabs"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/recycle_item_product_cart" />
+
+                    <include
+                        android:id="@+id/mine_empty"
+                        layout="@layout/empty_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="70dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mine_rv" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <include
+                android:id="@+id/home_bottom_buy"
+                layout="@layout/include_mine_bottom_buy"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
